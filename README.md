@@ -62,4 +62,15 @@ This thinkscript is designed to be used for option order entry rules in TOS. The
 
 ![image](https://user-images.githubusercontent.com/13930961/184006353-665aefae-4782-4ab3-8593-6415cbcff2a9.png)
 
-14. 
+14. Click `Save` in the lower-right of the `Edit condition` window
+15. Click `OK` in the `Study order condition` window
+16. Back in the `Order rules` window, change `Limit linked to` to be `LAST`
+
+![image](https://user-images.githubusercontent.com/13930961/184008290-87ed384b-551c-4437-99dd-ea82983d5279.png)
+
+17. Click `Save` in the lower-right corner of the `Order rules` window
+18. Finally save the order as a template so it can be re-used
+
+![image](https://user-images.githubusercontent.com/13930961/184008850-e5c26072-6903-4bfa-8958-19942e3a3f56.png)
+
+![image](https://user-images.githubusercontent.com/13930961/184009002-b28e20b8-5839-41bc-823f-b2a1aca2b2d0.png)
