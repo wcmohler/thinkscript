@@ -30,4 +30,14 @@ This thinkscript is designed to be used for option order entry rules in TOS. The
 
 ![image](https://user-images.githubusercontent.com/13930961/183997714-dbb5faeb-f31f-4af5-9b4e-fd8dadb972fd.png)
 
-6. 
+6. This form is where the study is put to use. Enter the underlying ticker on which the price, click `MARK` drop down the Method, select `STUDY` and `Edit...`
+
+![image](https://user-images.githubusercontent.com/13930961/184001911-4479b1e1-6f82-4ed7-864e-2faad92b0f2d.png)
+
+7. In the Study Order Condition window that popped up, click the `Delete` Button
+
+![image](https://user-images.githubusercontent.com/13930961/184002715-36d04333-e1c7-41b8-bdcc-3c8fe5900fee.png)
+
+8. Click the `Add condition` button
+
+![image](https://user-images.githubusercontent.com/13930961/184002969-66cc6ac1-37e4-4c89-90a3-8dbe341b8c00.png)
