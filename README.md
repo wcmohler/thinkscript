@@ -24,7 +24,7 @@ This thinkscript is designed to be used for option order entry rules in TOS. The
 
 ![image](https://user-images.githubusercontent.com/13930961/183996392-de246549-2966-44f8-a148-d8db815622af.png)
 
-![image](https://user-images.githubusercontent.com/13930961/183997198-b95445fd-bb58-4127-a41a-00244f86a6e4.png)
+![image](https://user-images.githubusercontent.com/13930961/183999819-30f2f1bb-bf67-4352-a361-3dd22590cf98.png)
 
 5. Now, click on the gear icon on the right side of the entry order to bring up the Order Rules form
 
