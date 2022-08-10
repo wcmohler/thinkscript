@@ -74,3 +74,5 @@ This thinkscript is designed to be used for option order entry rules in TOS. The
 ![image](https://user-images.githubusercontent.com/13930961/184008850-e5c26072-6903-4bfa-8958-19942e3a3f56.png)
 
 ![image](https://user-images.githubusercontent.com/13930961/184009002-b28e20b8-5839-41bc-823f-b2a1aca2b2d0.png)
+
+19. Once the order entry window opens, Start with step 6, above, in order to make any desired changes to the entry criteria, such as the trigger price, relative volume, etc.
