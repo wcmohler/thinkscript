@@ -1,0 +1,44 @@
+# Welcome to the BaconTrap!
+# This script lets you set price traps for breakout plays
+# To use it, set your price, contract type and other settings as necessary
+# Buy a contract, set conditions in the order screen, and select this study as your condition to buy
+# Then sit back and wait for your ticker to wander into your trap!
+# Use OCO brackets to automate target prices and stop losses
+
+# Inputs
+input TriggerPrice = 412.51; #set your breakout level
+input RelativeVolumeTrigger = 1.1; #how strong should volume action be to consider it a break?
+input ContractType = {default Calls, Puts}; #select contract type.  if you don't know, back away slowly...
+input VolPeriods = 21; #how many sessions should we monitor for average volume?
+input MinutesAfterOpen = 45; #how long should we wait after MO to make trades?
+input OpenTime = 0830; #local timezone Market Open
+
+# Trigger Price
+def agg = AggregationPeriod.FIVE_MIN; 
+def Close5Min = close(period = agg);
+def PriceTriggered;
+
+switch (ContractType) {
+  case Calls:
+    PriceTriggered = Close5Min >= TriggerPrice;
+  case Puts:
+    PriceTriggered = Close5Min <= TriggerPrice;
+}
+
+# Calculate if it is the desired time in minutes after open 
+def durationSec = 60 * 60;
+def secondsPassed = SecondsFromTime(OpenTime);
+def TimeTriggered = secondsPassed >= MinutesAfterOpen * 60;
+
+# Calculate relative volume
+def RelativeVolume = volume / Average(volume, VolPeriods)[1];
+def VolumeTriggered = RelativeVolume >= RelativeVolumeTrigger;
+
+# Put it all together
+def TrapIsSet = TimeTriggered == 1 and PriceTriggered == 1 and VolumeTriggered == 1;
+
+plot TrapStatus = TrapIsSet; 
+TrapStatus.SetHiding(1 == 1);
+
+# Uncomment below for testing if the trap is set
+# AddLabel(TrapIsSet, "Trap is Set: " + TrapIsSet, (if TrapIsSet == 1 then Color.GREEN else if TrapIsSet == 0 then Color.ORANGE else Color.LIGHT_GRAY));
