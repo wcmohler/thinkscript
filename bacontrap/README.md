@@ -75,4 +75,4 @@ This thinkscript is designed to be used for option order entry rules in TOS. The
 
 ![image](https://user-images.githubusercontent.com/13930961/184009002-b28e20b8-5839-41bc-823f-b2a1aca2b2d0.png)
 
-19. Once the order entry window opens, Start with step 6, above, in order to make any desired changes to the entry criteria, such as the trigger price, relative volume, etc. Rather than deleting the study to us in step 7, you can just edit the one that's part of the template, then move on to step 9
+19. Once the order entry window opens, Start with step 6, above, in order to make any desired changes to the entry criteria, such as the trigger price, relative volume, etc. Rather than deleting the study to use in step 7, you can just edit the one that's part of the template, then move on to step 9
