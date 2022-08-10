@@ -38,6 +38,28 @@ This thinkscript is designed to be used for option order entry rules in TOS. The
 
 ![image](https://user-images.githubusercontent.com/13930961/184002715-36d04333-e1c7-41b8-bdcc-3c8fe5900fee.png)
 
-8. Click the `Add condition` button
+8. Next, change the period for the Study Order Condition to 5 minutes
+
+![image](https://user-images.githubusercontent.com/13930961/184006868-1a901435-612a-443d-a118-009a25f7027e.png)
+
+9. Click the `Add condition` button
 
 ![image](https://user-images.githubusercontent.com/13930961/184002969-66cc6ac1-37e4-4c89-90a3-8dbe341b8c00.png)
+
+10. Drop down `Select a condition` and select `Study`
+
+![image](https://user-images.githubusercontent.com/13930961/184005148-4ee7c42e-aef6-4da3-a6e4-bf3f9050932b.png)
+
+11. Start typing in `bacon` and select the `BaconTrap` study
+
+![image](https://user-images.githubusercontent.com/13930961/184005447-0360b134-0217-4b14-ba70-cf23460733d5.png)
+
+12. In the `Edit condition` window, select `is equal to`, then `Value`, and set the value to `1`
+
+![image](https://user-images.githubusercontent.com/13930961/184005983-caa4365e-94f2-4e3a-af8d-33382973bd86.png)
+
+13. Set your desired trigger price, relative volume trigger, contract type, volume periods, minutes after open and open time
+
+![image](https://user-images.githubusercontent.com/13930961/184006353-665aefae-4782-4ab3-8593-6415cbcff2a9.png)
+
+14. 
