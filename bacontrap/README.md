@@ -58,9 +58,9 @@ This thinkscript is designed to be used for option order entry rules in TOS. The
 
 ![image](https://user-images.githubusercontent.com/13930961/184005983-caa4365e-94f2-4e3a-af8d-33382973bd86.png)
 
-13. Set your desired trigger price, relative volume trigger, contract type, volume periods, minutes after open and open time
+13. Set your desired trigger price, relative volume trigger, contract type, volume periods, minutes after open
 
-![image](https://user-images.githubusercontent.com/13930961/184006353-665aefae-4782-4ab3-8593-6415cbcff2a9.png)
+![image](https://user-images.githubusercontent.com/13930961/184715416-5c0dd4ed-1c9c-4e61-9004-c5d352ae21db.png)
 
 14. Click `Save` in the lower-right of the `Edit condition` window
 15. Click `OK` in the `Study order condition` window
