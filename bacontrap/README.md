@@ -11,6 +11,7 @@ This thinkscript is designed to be used for option order entry rules in TOS. The
 - Relative volume trigger
 - Contract type (calls or puts)
 - Minutes after open (to avoid false triggering during volatility after market open)
+
 ![image](https://user-images.githubusercontent.com/13930961/183993082-eb964897-c5ee-423a-8995-503df3f6944c.png)
 
 ## Setup an Order Template
