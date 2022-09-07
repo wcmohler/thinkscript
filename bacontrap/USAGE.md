@@ -1,4 +1,4 @@
-# Bacon Trap
+# Using the Bacon Trap
 
 ## What This Does
 The BaconTrap study is intended to be used for "set it and forget it" type of trades, and takes advantage of trend days.
