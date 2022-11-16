@@ -7,21 +7,26 @@
 
 # Inputs
 input TriggerPrice = 412.51; #set your breakout level
-input RelativeVolumeTrigger = 1.1; #how strong should volume action be to consider it a break?
+input RelativeVolumeTrigger = 1.5; #how strong should volume action be to consider it a break?
 input ContractType = {default Calls, Puts}; #select contract type.  if you don't know, back away slowly...
 input VolPeriods = 21; #how many sessions should we monitor for average volume?
-input MinutesAfterOpen = 25; #how long should we wait after MO to make trades?
+input MinutesAfterOpen = 30; #how long should we wait after MO to make trades?
 
 # Trigger Price
 def agg = AggregationPeriod.FIVE_MIN; 
 def Close5Min = close(period = agg);
+def ClosePrev5Min = close(period = agg)[2];
 def PriceTriggered;
+def Confirmation;
+def TrapIsSet;
 
 switch (ContractType) {
   case Calls:
-    PriceTriggered = Close5Min >= TriggerPrice;
+    PriceTriggered = Close5Min > TriggerPrice;
+    Confirmation = ClosePrev5Min > TriggerPrice;
   case Puts:
-    PriceTriggered = Close5Min <= TriggerPrice;
+    PriceTriggered = Close5Min < TriggerPrice;
+    Confirmation = ClosePrev5Min < TriggerPrice;
 }
 
 # Calculate if it is the desired time in minutes after open
@@ -32,8 +37,8 @@ def TimeTriggered = secondsPassed >= MinutesAfterOpen * 60;
 def RelativeVolume = volume / Average(volume, VolPeriods)[1];
 def VolumeTriggered = RelativeVolume >= RelativeVolumeTrigger;
 
-# Put it all together
-def TrapIsSet = TimeTriggered == 1 and PriceTriggered == 1 and VolumeTriggered == 1;
+# Put it all together to trigger the trap's intended side if there is confirmation with 2 candles closing beyond the level
+TrapIsSet = TimeTriggered == 1 and PriceTriggered == 1 and Confirmation == 1 and VolumeTriggered == 1;
 
 plot TrapStatus = TrapIsSet; 
 TrapStatus.SetHiding(1 == 1);

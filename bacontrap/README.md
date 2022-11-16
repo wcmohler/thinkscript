@@ -2,8 +2,8 @@
 
 ## What This Does
 This thinkscript is designed to be used for option order entry rules in TOS. The script will trigger entry (or exit) criteria based on the following:
-- The underlying price of a ticker
-- A specified minimum amount of time after market open before becoming sctive
+- The underlying price of a ticker, based on two consecutive 5 minute candles closing beyond the set level
+- A specified minimum amount of time after market open before becoming active
 - Relative volume
 
 ## Inputs:
