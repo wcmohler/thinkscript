@@ -1,0 +1,48 @@
+# Welcome to the BaconReverser!
+# This script lets you set price levels for reversal plays. It effectively uses the same logic as BaconTrap
+#   which is used for continuation/breakout plays.
+# To use it, set your price, contract type and other settings as necessary
+# Buy a contract, set conditions in the order screen, and select this study as your condition to buy
+# Then sit back and wait for your ticker to wander into your reverser!
+# Use OCO brackets to automate target prices and stop losses
+
+# Inputs
+input TriggerPrice = 420; #set your breakout level
+input RelativeVolumeTrigger = 1.5; #how strong should volume action be to consider it a break?
+input ContractType = {default Calls, Puts}; #select contract type.  if you don't know, back away slowly...
+input VolPeriods = 21; #how many sessions should we monitor for average volume?
+input MinutesAfterOpen = 30; #how long should we wait after MO to make trades?
+
+# Trigger Price
+def agg = AggregationPeriod.FIVE_MIN; 
+def Close5Min = close(period = agg);
+def ClosePrev5Min = close(period = agg)[2];
+def PriceTriggered;
+def Confirmation;
+def ReverserIsSet;
+
+switch (ContractType) {
+  case Calls:
+    PriceTriggered = Close5Min < TriggerPrice;
+    Confirmation = ClosePrev5Min > TriggerPrice;
+  case Puts:
+    PriceTriggered = Close5Min > TriggerPrice;
+    Confirmation = ClosePrev5Min < TriggerPrice;
+}
+
+# Calculate if it is the desired time in minutes after open
+def secondsPassed = SecondsFromTime(930);
+def TimeTriggered = secondsPassed >= MinutesAfterOpen * 60;
+
+# Calculate relative volume
+def RelativeVolume = volume / Average(volume, VolPeriods)[1];
+def VolumeTriggered = RelativeVolume >= RelativeVolumeTrigger;
+
+# Put it all together to trigger the reverser's intended side if there is confirmation with 2 candles closing beyond the level
+ReverserIsSet = TimeTriggered == 1 and PriceTriggered == 1 and Confirmation == 1 and VolumeTriggered == 1;
+
+plot ReverserStatus = ReverserIsSet; 
+ReverserStatus.SetHiding(1 == 1);
+
+# Uncomment below for testing if the reverser is set
+# AddLabel(ReverserIsSet, "Reverser is Set: " + ReverserIsSet, (if ReverserIsSet == 1 then Color.GREEN else if ReverserIsSet == 0 then Color.ORANGE else Color.LIGHT_GRAY));
