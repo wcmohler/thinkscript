@@ -17,7 +17,7 @@ This thinkscript is designed to be used for option order entry rules in TOS. The
 - Contract type (calls or puts)
 - Minutes after open (to avoid false triggering during volatility after market open)
 
-![image](https://user-images.githubusercontent.com/13930961/183993082-eb964897-c5ee-423a-8995-503df3f6944c.png)
+![image](https://user-images.githubusercontent.com/13930961/202512062-2036cdcc-164f-48b9-8d9e-30b16485e8e0.png)
 
 ## Setup an Order Template
 1. In TOS, import the script from https://tos.mx/jV1s2k6
