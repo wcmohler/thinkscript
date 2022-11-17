@@ -1,8 +1,13 @@
 # Bacon Reverser
 
+## Why Reverse Bacon?
+While testing the BaconTrap for continuation/breakout plays, I noticed that the losing trades in the traps usually were the result of a bounce/rejection then reversal. This study is designed to take advantage of that potential and provide some level of hedge against false positives in the BaconTraps.
+
+See https://github.com/wcmohler/thinkscript/tree/main/bacontrap for the BaconTrap information.
+
 ## What This Does
 This thinkscript is designed to be used for option order entry rules in TOS. The script will trigger entry (or exit) criteria based on the following:
-- The underlying price of a ticker, based on one 5 minute candle closing beyond the set level and the next (most recent) closing back before the level
+- The underlying price of a ticker, based on one 5 minute candle closing beyond the set level and the next (most recent) closing back before the level. Two candles is the default in order to provide some confirmation for reversal plays. For quick pullback scalps, set this to "One".
 - A specified minimum amount of time after market open before becoming active
 - Relative volume
 
@@ -12,7 +17,7 @@ This thinkscript is designed to be used for option order entry rules in TOS. The
 - Contract type (calls or puts)
 - Minutes after open (to avoid false triggering during volatility after market open)
 
-![image](https://user-images.githubusercontent.com/13930961/183993082-eb964897-c5ee-423a-8995-503df3f6944c.png)
+![image](https://user-images.githubusercontent.com/13930961/202512062-2036cdcc-164f-48b9-8d9e-30b16485e8e0.png)
 
 ## Setup an Order Template
 1. In TOS, import the script from URL_GOES_HERE
