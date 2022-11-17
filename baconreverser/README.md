@@ -20,7 +20,7 @@ This thinkscript is designed to be used for option order entry rules in TOS. The
 ![image](https://user-images.githubusercontent.com/13930961/202512062-2036cdcc-164f-48b9-8d9e-30b16485e8e0.png)
 
 ## Setup an Order Template
-1. In TOS, import the script from URL_GOES_HERE
+1. In TOS, import the script from https://tos.mx/mvSYwLV
 2. Select an option contract, right-click and choose the `Buy custom` option, then `with OCO bracket`
 3. In the order entry form, click to unlink the prices for the OCO portion (circled in blue)
 
