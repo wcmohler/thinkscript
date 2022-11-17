@@ -1,13 +1,18 @@
 # Bacon Trap
 
+## Why Trap Bacon?
+Bacon needs trapping in order to set up intraday swing plays with some levels of confirmation before triggering entry. The trap can also be used to shorter-term intraday scalps.
+The levels that are used to identify which traps to set and on which side usually come from Fibonacci levels, but other level identification methodologies should be ok to use as well.
+
 ## What This Does
 This thinkscript is designed to be used for option order entry rules in TOS. The script will trigger entry (or exit) criteria based on the following:
-- The underlying price of a ticker, based on two consecutive 5 minute candles closing beyond the set level
-- A specified minimum amount of time after market open before becoming active
-- Relative volume
+- The underlying price of a ticker, based on one or two consecutive 5 minute candles closing beyond the set level. Two candles is the default in order to provide some confirmation for swing plays. For quick scalps, set this to "One".
+- A specified minimum amount of time after market open before becoming active.
+- Relative volume.
 
 ## Inputs:
 - Trigger price
+- Number of candles
 - Relative volume trigger
 - Contract type (calls or puts)
 - Minutes after open (to avoid false triggering during volatility after market open)

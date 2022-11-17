@@ -7,6 +7,7 @@
 
 # Inputs
 input TriggerPrice = 412.51; #set your breakout level
+input NumberOfPriceCandles = {One, default Two}; #
 input RelativeVolumeTrigger = 1.5; #how strong should volume action be to consider it a break?
 input ContractType = {default Calls, Puts}; #select contract type.  if you don't know, back away slowly...
 input VolPeriods = 21; #how many sessions should we monitor for average volume?
@@ -37,8 +38,13 @@ def TimeTriggered = secondsPassed >= MinutesAfterOpen * 60;
 def RelativeVolume = volume / Average(volume, VolPeriods)[1];
 def VolumeTriggered = RelativeVolume >= RelativeVolumeTrigger;
 
-# Put it all together to trigger the trap's intended side if there is confirmation with 2 candles closing beyond the level
-TrapIsSet = TimeTriggered == 1 and PriceTriggered == 1 and Confirmation == 1 and VolumeTriggered == 1;
+# Put it all together to trigger the trap's intended side if there is confirmation with 2 candles closing beyond the level and the user has selected then use of two candles
+switch (NumberOfPriceCandles) {
+  case One:
+    TrapIsSet = TimeTriggered == 1 and PriceTriggered == 1 and VolumeTriggered == 1;
+  default:
+    TrapIsSet = TimeTriggered == 1 and PriceTriggered == 1 and Confirmation == 1 and VolumeTriggered == 1;
+}
 
 plot TrapStatus = TrapIsSet; 
 TrapStatus.SetHiding(1 == 1);
