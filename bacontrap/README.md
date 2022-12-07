@@ -12,9 +12,10 @@ This thinkscript is designed to be used for option order entry rules in TOS. The
 
 ## Inputs:
 - Trigger price
-- Number of candles
-- Relative volume trigger
-- Contract type (calls or puts)
+- Number of candles: Use 1 or 2 5-minute candles for the trigger price. Defaults to 2 to enable a "confirmation" candle.
+- Relative volume trigger: Defaults to 1.5 over 21 5-minute periods.
+- Contract type: Calls or Puts.
+
 - Minutes after open (to avoid false triggering during volatility after market open)
 
 ![image](https://user-images.githubusercontent.com/13930961/202512062-2036cdcc-164f-48b9-8d9e-30b16485e8e0.png)
