@@ -21,7 +21,7 @@ This thinkscript is designed to be used for option order entry rules in TOS. The
 ![image](https://user-images.githubusercontent.com/13930961/202512062-2036cdcc-164f-48b9-8d9e-30b16485e8e0.png)
 
 ## Setup an Order Template
-1. In TOS, import the script from https://tos.mx/jV1s2k6
+1. In TOS, import the script from https://tos.mx/ZBpkbIv
 2. Select an option contract, right-click and choose the `Buy custom` option, then `with OCO bracket`
 3. In the order entry form, click to unlink the prices for the OCO portion (circled in blue)
 
@@ -57,7 +57,7 @@ This thinkscript is designed to be used for option order entry rules in TOS. The
 
 ![image](https://user-images.githubusercontent.com/13930961/184005148-4ee7c42e-aef6-4da3-a6e4-bf3f9050932b.png)
 
-11. Start typing in `bacon` and select the `BaconTrap` study
+11. Start typing in `bacon` and select the `BaconTrap` study. Choose the newest version (as indicated by the `_v` portion of the name). The version number shown below may be older than the study you just imported.
 
 ![image](https://user-images.githubusercontent.com/13930961/184005447-0360b134-0217-4b14-ba70-cf23460733d5.png)
 
