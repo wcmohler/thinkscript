@@ -1,0 +1,16 @@
+input price = FundamentalType.CLOSE;
+input aggregationPeriod = AggregationPeriod.DAY;
+input length = 9;
+input displace = 0;
+input showOnlyLastPeriod = no;
+
+plot DailyEMA;
+
+if showOnlyLastPeriod and !IsNaN(close(period = aggregationPeriod)[-1]) {
+    DailyEMA = Double.NaN;
+} else {
+    DailyEMA = ExpAverage(fundamental(price, period = aggregationPeriod)[-displace], length);
+}
+
+DailyEMA.SetDefaultColor(GetColor(1));
+DailyEMA.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
